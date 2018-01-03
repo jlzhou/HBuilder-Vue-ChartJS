@@ -6,12 +6,10 @@
 
 <script>
 import homapage from './components/homepage/homepage.vue'
-import zline from './components/line/line.vue'
 
 export default {
   components: {
     homapage,
-    zline
   }
 }
 </script>
