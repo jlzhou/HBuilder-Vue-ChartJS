@@ -1,0 +1,8 @@
+![homepage](./static/img/homepage.png)
+![line](./static/img/line.png)
+![bar](./static/img/bar.png)
+![radar](./static/img/radar.png)
+![polar-area](./static/img/polar-area.png)
+![pie](./static/img/pie.png)
+![bubble](./static/img/bubble.png)
+![scatter](./static/img/scatter.png)

@@ -15,6 +15,7 @@ export default {
       chartData: {
         datasets: [
           {
+            label: 'Red',
             backgroundColor: 'red',
             data: [
               {

@@ -45569,6 +45569,7 @@ if (false) {
     return {
       chartData: {
         datasets: [{
+          label: 'Red',
           backgroundColor: 'red',
           data: [{
             x: 1, y: 1, r: 4
