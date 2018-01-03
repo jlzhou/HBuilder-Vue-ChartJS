@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      items: ["line", 'bar', 'radar', 'polarArea'],
+      items: ["line", 'bar', 'radar', 'polarArea', 'pie', 'bubble', 'scatter'],
       transitionName: "push",
       hasEnter: false,
     };
