@@ -1,30 +1,35 @@
 <template>
-  <page
+  <z-page
+    :mainPage="true"
+    :background="'red'"
     class="homepage"
-    :noLeft="true"
     title="首页">
     <z-list
       :items="items"
       @itemClick="itemClick" />
-    <transition :name="transitionName">
-      <router-view />
+    <transition
+      :name="transitionName"
+      @before-enter="beforeEnter"
+      @after-enter="afterEnter">
+      <router-view
+        :afterEnter="hasEnter" />
     </transition>
-  </page>
+  </z-page>
 </template>
 
 <script>
-import Page from "../core/page.vue";
-import { zList } from "koala-ui";
+import { zList, zPage } from "koala-ui";
 
 export default {
   components: {
-    Page,
+    zPage,
     zList
   },
   data() {
     return {
       items: ["line"],
-      transitionName: "push"
+      transitionName: "push",
+      hasEnter: false,
     };
   },
   watch: {
@@ -39,6 +44,12 @@ export default {
   methods: {
     itemClick(item) {
       this.$router.push(`/${item}`);
+    },
+    beforeEnter(el, done) {
+      this.hasEnter = false
+    },
+    afterEnter(el, done) {
+      this.hasEnter = true
     }
   }
 };

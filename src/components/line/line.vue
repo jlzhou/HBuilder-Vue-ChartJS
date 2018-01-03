@@ -1,8 +1,8 @@
 <template>
-  <page
+  <z-page
     title="Line">
     <canvas ref='chart'></canvas>
-  </page>
+  </z-page>
 </template>
 
 <script>
@@ -46,6 +46,9 @@ export default {
     };
   },
   methods: {
+    build() {
+      this.buildChart()
+    },
     buildChart() {
       let ctx = this.$refs.chart.getContext("2d");
 

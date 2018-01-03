@@ -1,13 +1,23 @@
-import Page from '../components/core/page.vue'
+import { zPage } from 'koala-ui'
 
 export default {
   components: {
-    Page
+    zPage
+  },
+  props: {
+    afterEnter: Boolean
+  },
+  watch: {
+    afterEnter(hasEnter) {
+      if(hasEnter && this.$refs.chart) {
+        this.build()
+      }
+    }
   },
   mounted() {
-    if(this.$refs.chart) this.buildChart()
+
   },
   methods: {
-    
+
   }
 }
