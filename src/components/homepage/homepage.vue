@@ -27,9 +27,9 @@ export default {
   },
   data() {
     return {
-      items: ["line", 'bar', 'radar', 'polarArea', 'pie', 'bubble', 'scatter'],
+      items: ["line", "bar", "radar", "polarArea", "pie", "bubble", "scatter"],
       transitionName: "push",
-      hasEnter: false,
+      hasEnter: false
     };
   },
   watch: {
@@ -43,13 +43,13 @@ export default {
   },
   methods: {
     itemClick(item) {
-      this.$router.push({path: `/${item}`, query: { type: item }});
+      this.$router.push({ path: `/${item}`, query: { type: item } });
     },
     beforeEnter(el, done) {
-      this.hasEnter = false
+      this.hasEnter = false;
     },
     afterEnter(el, done) {
-      this.hasEnter = true
+      this.hasEnter = true;
     }
   }
 };
@@ -57,60 +57,50 @@ export default {
 
 <style scoped lang="less">
 .homepage {
-  .content {
-    & > .page {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
+  .push-enter {
+    left: 100%;
+  }
 
-    .push-enter {
-      left: 100%;
-    }
+  .push-enter-active {
+    transition: left 0.3s ease;
+  }
 
-    .push-enter-active {
-      transition: left 0.3s ease;
-    }
+  .push-enter-to,
+  .push-leave {
+    left: 0;
+    opacity: 1;
+  }
 
-    .push-enter-to,
-    .push-leave {
-      left: 0;
-      opacity: 1;
-    }
+  .push-leave-active {
+    transition: all 0.3s ease;
+  }
 
-    .push-leave-active {
-      transition: all 0.3s ease;
-    }
+  .push-leave-to {
+    left: -50%;
+    opacity: 0.8;
+  }
 
-    .push-leave-to {
-      left: -50%;
-      opacity: 0.8;
-    }
+  .pop-enter {
+    left: -50%;
+    opacity: 0.8;
+  }
 
-    .pop-enter {
-      left: -50%;
-      opacity: 0.8;
-    }
+  .pop-enter-active {
+    transition: all 0.3s ease;
+  }
 
-    .pop-enter-active {
-      transition: all 0.3s ease;
-    }
+  .pop-enter-to,
+  .pop-leave {
+    left: 0;
+    opacity: 1;
+  }
 
-    .pop-enter-to,
-    .pop-leave {
-      left: 0;
-      opacity: 1;
-    }
+  .pop-leave-active {
+    transition: left 0.3s ease;
+  }
 
-    .pop-leave-active {
-      transition: left 0.3s ease;
-    }
-
-    .pop-leave-to {
-      left: 100%;
-    }
+  .pop-leave-to {
+    left: 100%;
   }
 }
 </style>
