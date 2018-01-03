@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      items: ["line"],
+      items: ["line", 'bar'],
       transitionName: "push",
       hasEnter: false,
     };
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     itemClick(item) {
-      this.$router.push(`/${item}`);
+      this.$router.push({path: `/${item}`, query: { type: item }});
     },
     beforeEnter(el, done) {
       this.hasEnter = false
